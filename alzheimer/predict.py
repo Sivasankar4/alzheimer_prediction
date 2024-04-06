@@ -31,7 +31,7 @@ bgLabel.place(x=0, y=0 ,relwidth=1,relheight=1)
 # l1.place(x=550 , y=190,relwidth=0.2,relheight=0.1)
 b1 = tk.Button(my_w, text='Upload Images', 
    width=20,command = lambda:result(), activebackground='#000080',font=my_font1, bg='#124178',fg='white')
-b1.place(relx=0.4,rely=0.4, relwidth=0.21,relheight=0.1)
+b1.place(relx=0.42,rely=0.4, relwidth=0.15,relheight=0.07)
 
 print(tf.__version__)
 
@@ -44,7 +44,7 @@ titleLabel = Label(my_w, text=' ALIZHEIMER DISEASE PREDICTION', font=('italic', 
 titleLabel.place(x=0, y=0,relwidth=1,relheight=0.1)
 
 endbtn=Button(my_w,text="Exit",font='italic 14 bold',bg='#0C516A',fg='white',command=close)
-endbtn.place(relx=0.46,rely=0.8,relwidth=0.1,relheight=0.05)
+endbtn.place(relx=0.45,rely=0.8,relwidth=0.1,relheight=0.05)
 
 
 classifierLoad = tf.keras.models.load_model('model2.h5')
@@ -58,7 +58,6 @@ def result():
    test_image2 = np.expand_dims(test_image2, axis = 0)   
    # cnn prediction on the test image
    result = classifierLoad.predict(test_image2)
-   print(result)
    b1.place_forget()
    if result[0][1] == 1:
        prediction2="NonDemented"
@@ -72,9 +71,8 @@ def result():
       
    #print(prediction2)
    prediction=prediction2
-   l2 = tk.Label(my_w,text="Result :  "+prediction,width=50,font=my_font1,bg='#AC9005',
-                   fg='white',)  
-   l2.place(x=560, y=550, width=400)
+   l2 = tk.Label(my_w,text="Result :  "+prediction,font=my_font1,bg='#AC9005',fg='white',)  
+   l2.place(relx=0.4, rely=0.65, relwidth=0.2, relheight=0.05)
    return filename 
        
 def upload_file():   
