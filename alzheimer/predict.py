@@ -39,7 +39,7 @@ def close():
    my_w.destroy()
 
 
-titleLabel = Label(my_w, text=' ALIZHEIMER DISEASE PREDICTION', font=('italic', 22, 'bold '), bg='#0C516A',
+titleLabel = Label(my_w, text=' ALIZHEIMER DISEASE PREDICTION', font=('italic', 22, 'bold '), bg='#0git C516A',
                    fg='white')
 titleLabel.place(x=0, y=0,relwidth=1,relheight=0.1)
 
