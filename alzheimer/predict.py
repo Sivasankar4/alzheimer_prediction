@@ -20,7 +20,7 @@ my_w.state("zoomed")
 my_w.wm_title("Alzheimer Disease Prediction")
 my_font1=(18)
 
-bg = ImageTk.PhotoImage(file='bg.png')
+bg = ImageTk.PhotoImage(file='alzheimer/bg.png')
 bgLabel = Label(my_w, image=bg)
 bgLabel.place(x=0, y=0 ,relwidth=1,relheight=1)
 
@@ -39,7 +39,7 @@ def close():
    my_w.destroy()
 
 
-titleLabel = Label(my_w, text=' ALIZHEIMER DISEASE PREDICTION', font=('italic', 22, 'bold '), bg='#0git C516A',
+titleLabel = Label(my_w, text=' ALIZHEIMER DISEASE PREDICTION', font=('italic', 22, 'bold '), bg='#0C516A',
                    fg='white')
 titleLabel.place(x=0, y=0,relwidth=1,relheight=0.1)
 
@@ -47,13 +47,13 @@ endbtn=Button(my_w,text="Exit",font='italic 14 bold',bg='#0C516A',fg='white',com
 endbtn.place(relx=0.45,rely=0.8,relwidth=0.1,relheight=0.05)
 
 
-classifierLoad = tf.keras.models.load_model('model2.h5')
+classifierLoad = tf.keras.models.load_model('alzheimer\MODEL\model264.keras')
 
 
 def result():
     
    filename =upload_file()
-   test_image2 = image.load_img(filename, target_size = (200,200))
+   test_image2 = image.load_img(filename, target_size = (224,224))
    test_image2 = image.img_to_array(test_image2)
    test_image2 = np.expand_dims(test_image2, axis = 0)   
    # cnn prediction on the test image
